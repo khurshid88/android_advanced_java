@@ -56,7 +56,8 @@ public class DatabaseActivity extends AppCompatActivity {
 
     void roomDatabase() {
         UserRepository repository = new UserRepository(getApplication());
-        User user = new User(10, "Kurbanov Xurshidbek");
+        User user = new User(1, "Kurbanov Xurshidbek");
+        //repository.saveUser(user);
         new UserAsyncTask(repository).execute(user);
     }
 
@@ -76,7 +77,7 @@ public class DatabaseActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<User> users) {
             super.onPostExecute(users);
-            tv_size.setText("Room DB size is " + users.size());
+            tv_size.setText("Room DB`s users size is " + users.size());
         }
     }
 }
